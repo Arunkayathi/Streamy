@@ -1,5 +1,11 @@
 import { combineReducers } from "redux";
-import { SIGN_IN, SIGN_OUT } from "../actions/types";
+import {
+  SIGN_IN,
+  SIGN_OUT,
+  CREATE_STREAM,
+  FETCH_STREAMS,
+  FETCH_STREAM
+} from "../actions/types";
 import { reducer as formReducer } from "redux-form";
 
 const INITIAL_STATE = {
@@ -17,7 +23,20 @@ const googleAuthReducer = (state = INITIAL_STATE, { type, payload }) => {
       return state;
   }
 };
+const streamReducer = (streams = [], { type, payload }) => {
+  switch (type) {
+    case CREATE_STREAM:
+      return [...streams, payload];
+    case FETCH_STREAMS:
+      return [...payload];
+    case FETCH_STREAM:
+      return;
+    default:
+      return streams;
+  }
+};
 export default combineReducers({
   auth: googleAuthReducer,
-  form: formReducer
+  form: formReducer,
+  streams: streamReducer
 });

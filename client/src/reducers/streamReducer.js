@@ -2,7 +2,8 @@ import {
   CREATE_STREAM,
   FETCH_STREAMS,
   FETCH_STREAM,
-  EDIT_STREAM
+  EDIT_STREAM,
+  DELETE_STREAM
 } from "../actions/types";
 import * as _ from "lodash";
 

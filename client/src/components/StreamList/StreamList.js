@@ -7,11 +7,13 @@ class StreamList extends Component {
     this.props.fetchStreams();
   }
 
-  renderAdmin({ userId }) {
+  renderAdmin({ userId, id }) {
     if (userId === this.props.userId) {
       return (
         <div className="right floated content">
-          <div className="ui button primary">Edit</div>
+          <Link to={`streams/edit/${id}`} className="ui button primary">
+            Edit
+          </Link>
           <div className="ui button negative">Delete</div>
         </div>
       );

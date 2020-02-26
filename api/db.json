@@ -1,28 +1,10 @@
 {
   "streams": [
     {
-      "title": "test",
-      "description": "test2",
-      "userId": "105777712229018590974",
-      "id": 1
-    },
-    {
-      "title": "new",
-      "description": "new",
-      "userId": "105777712229018590974",
-      "id": 2
-    },
-    {
       "title": "new",
       "description": "new",
       "userId": "105777712229018590972",
       "id": 3
-    },
-    {
-      "title": "new",
-      "description": "new updated",
-      "userId": "105777712229018590974",
-      "id": 4
     },
     {
       "title": "new2",

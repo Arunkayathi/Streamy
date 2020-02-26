@@ -4,7 +4,8 @@ import {
   CREATE_STREAM,
   FETCH_STREAMS,
   FETCH_STREAM,
-  EDIT_STREAM
+  EDIT_STREAM,
+  DELETE_STREAM
 } from "./types";
 import streams from "../api/stream";
 
@@ -65,9 +66,10 @@ export const editStream = (streamDetails, streamId) => async (
 };
 
 export const deleteStream = streamId => async dispatch => {
-  await streams.delete(`/streams${streamId}`);
+  await streams.delete(`/streams/${streamId}`);
   dispatch({
-    type: FETCH_STREAM,
+    type: DELETE_STREAM,
     payload: streamId
   });
+  history.push("/");
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Router } from "react-router-dom";
+import { BrowserRouter, Route, Link, Router, Switch } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
@@ -26,11 +26,13 @@ const App = () => {
       <Router history={history}>
         <div className="ui container">
           <Header></Header>
-          <Route path="/" exact component={StreamList}></Route>
-          <Route path="/streams/new" component={StreamCreate}></Route>
-          <Route path="/streams/edit/:id" component={StreamEdit}></Route>
-          <Route path="/streams/delete/:id" component={StreamDelete}></Route>
-          <Route path="/streams/show" component={StreamShow}></Route>
+          <Switch>
+            <Route path="/" exact component={StreamList}></Route>
+            <Route path="/streams/new" component={StreamCreate}></Route>
+            <Route path="/streams/edit/:id" component={StreamEdit}></Route>
+            <Route path="/streams/delete/:id" component={StreamDelete}></Route>
+            <Route path="/streams/:id" component={StreamShow}></Route>
+          </Switch>
         </div>
       </Router>
     </Provider>
